@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beauty Mirror</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:linear-gradient(150deg,#f8e8ed,#fff9f7);font-family:Georgia,serif;color:#754b5b;display:flex;align-items:center;justify-content:center;padding:24px}
+.mirror{width:100%;max-width:420px;background:#fffafc;border:3px solid #dfb5c3;border-radius:180px 180px 30px 30px;box-shadow:0 15px 45px #ad78852b;padding:65px 25px 40px;text-align:center}
+.brand{font:12px Arial,sans-serif;letter-spacing:4px;color:#aa8290}
+h1{font-size:30px;font-weight:normal;line-height:1.35;margin:35px 0}
+p{font-size:17px;line-height:1.6}
+.heart{font-size:35px;color:#c78a9f}
+button{background:#a66c81;color:white;border:0;border-radius:30px;padding:16px 25px;font-size:15px;margin-top:20px;cursor:pointer}
+#surprise{display:none;background:#f7e8ee;border-radius:18px;padding:18px;margin-top:20px;font-size:16px}
+footer{font:12px Arial,sans-serif;margin-top:35px;color:#b38e9b}
+</style>
+</head>
+<body>
+<div class="mirror">
+<div class="heart">♡</div>
+<div class="brand">BEAUTY MIRROR</div>
+<h1 id="message"></h1>
+<p>Айна саған бүгін кішкентай қуаныш сыйлағысы келеді...</p>
+<button onclick="document.getElementById('surprise').style.display='block'">Құпияны аш ✨</button>
+<div id="surprise">Бүгін өзіңе көңіл бөлуді ұмытпа! 🌷<br>Сен ерекше жансың!</div>
+<footer>WITH LOVE ♡ BEAUTY MIRROR</footer>
+</div>
+<script>
+const messages=[
+"Сен бүгін ерекше әдемісің! ♡",
+"Сенің күлкің — ең әдемі әшекейің!",
+"Бүгін өзіңе ғашық болатын күн!",
+"Сенің сұлулығың — өзіңе тән ерекшелік!",
+"Жарқыраудан ешқашан қорықпа!",
+"Сен бүгін де керемет көрінесің!",
+"Өзіңді жақсы көруді ұмытпа!",
+"Сенің нәзіктігің — сенің күшің!",
+"Бүгінгі күн сенің күлкіңмен әдемі!",
+"Сұлулық сенің өзіңнен басталады!",
+"Сен өзің ойлағаннан да ерекшесің!",
+"Әдемі сәттер өзіңнен басталсын!",
+"Бүгін өзіңе кішкентай қуаныш сыйла!",
+"Сенің ерекшелігің — сенің сұлулығың!",
+"Өзің болу — ең әдемі таңдау!",
+"Бүгін сен үшін тамаша күн!",
+"Сенің күлкің айналаңа жылу сыйлайды!",
+"Өзіңе сен, сен кереметсің!",
+"Бүгінгі айна саған сүйсініп тұр!",
+"Әлемге өз нұрыңды шаш!",
+"Сенің сұлулығың қайталанбас!",
+"Күлімде, бүгін саған жарасады!",
+"Өзіңе мейіріммен қара!",
+"Бүгінгі ең әдемі жаңалық — сен!",
+"Сенің әдемілігің табиғилығыңда!",
+"Өзіңді бағала, сен соған лайықсың!",
+"Сенің әр күнің әдемі болсын!",
+"Жүрегіңдегі жылулық жүзіңнен көрінсін!",
+"Бүгін өзіңді ерекше сезін!",
+"Айнадағы жанға күлімде! ♡"
+];
+const now=new Date();
+const day=Math.floor(Date.UTC(now.getFullYear(),now.getMonth(),now.getDate())/86400000);
+document.getElementById("message").textContent=messages[((day%messages.length)+messages.length)%messages.length];
+</script>
+</body>
+</html>
+  
